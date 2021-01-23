@@ -1,5 +1,5 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
-# agnoster-repopath Theme - https://
+# agnoster-repopath Theme - https://github.com/ivanfurlan/agnoster-repopath-theme
 # Based on: agnoster's Theme - https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
