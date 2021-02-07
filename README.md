@@ -1,5 +1,10 @@
-# agnoster-repopath-theme
+# agnoster-repopath.zsh-theme
 Custom theme based on https://github.com/agnoster/agnoster-zsh-theme and https://github.com/ChesterYue/ohmyzsh-theme-passion
+
+## Features
+- Inside a repository (git or mercurial) show repo's name and the path only from root directory (where there is .git or .hg)
+- Show current time in prompt
+- After each command show the time cost
 
 ## Installation 
 **Download theme**
