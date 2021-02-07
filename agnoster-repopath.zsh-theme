@@ -265,6 +265,67 @@ build_right_prompt() {
   #prompt_time
 }
 
+# command execute before
+preexec() {
+    COMMAND_TIME_BEIGIN="$(current_time_millis)";
+}
+
+# command execute after
+precmd() {
+    # output command execute after
+    output_command_execute_after $last_cmd_result;
+}
+
+current_time_millis() {
+    local time_millis;
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        # Linux
+        time_millis="$(date +%s.%3N)";
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS
+        time_millis="$(gdate +%s.%3N)";
+    else
+        # Unknown.
+    fi
+    echo $time_millis;
+}
+
+# output command execute after
+output_command_execute_after() {
+    if [ "$COMMAND_TIME_BEIGIN" = "-20200325" ] || [ "$COMMAND_TIME_BEIGIN" = "" ];
+    then
+        return 1;
+    fi
+    
+    local color_reset="$reset_color";
+
+    # start_time
+    local start_time="[s $(date -d @${COMMAND_TIME_BEIGIN} +%X)]"
+    local color_time="$fg_no_bold[cyan]";
+    start_time="${color_time}${start_time}${color_reset}";
+    
+    # time
+    local time="[e $(date +%H:%M:%S)]"
+    local color_time="$fg_no_bold[cyan]";
+    time="${color_time}${time}${color_reset}";
+
+    # cost
+    local time_end="$(current_time_millis)";
+    local cost=$(bc -l <<<"${time_end}-${COMMAND_TIME_BEIGIN}");
+    COMMAND_TIME_BEIGIN="-20200325"
+    local length_cost=${#cost};
+    if [ "$length_cost" = "4" ];
+    then
+        cost="0${cost}"
+    fi
+    cost="[cost ${cost}s]"
+    local color_cost="$fg_no_bold[cyan]";
+    cost="${color_cost}${cost}${color_reset}";
+
+    echo -e "";
+    echo -e "${start_time} ${time} ${cost}";
+}
+
 PROMPT='%{%f%b%k%}$(build_prompt) '
 RPROMPT='$(build_right_prompt)'
 
