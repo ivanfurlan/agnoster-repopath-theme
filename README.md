@@ -6,6 +6,7 @@ Custom theme based on https://github.com/agnoster/agnoster-zsh-theme and https:/
 - Show current time in prompt
 - After each command show the time cost
 
+## How it looks like
 ![Terminal example](imgs/demo.gif)
 
 ## Installation 
