@@ -7,7 +7,7 @@ Custom theme based on https://github.com/agnoster/agnoster-zsh-theme and https:/
 git clone https://github.com/ivanfurlan/agnoster-repopath-theme.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/agnoster-repopath
 ```
 
-**create link for zsh**
+**Create link for zsh**
 ```shell
 ln -P ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/agnoster-repopath/agnoster-repopath.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/agnoster-repopath.zsh-theme
 ```
