@@ -36,12 +36,14 @@ git clone https://github.com/ivanfurlan/agnoster-repopath-theme.git ${ZSH_CUSTOM
 ```
 ## Plugins that I use
 ```
-plugins=(git vscode node docker python copyfile gitignore mercurial mvn sudo command-not-found colored-man-pages zsh-autosuggestions zsh-syntax-highlighting autoupdate)
+plugins=(git vscode node docker docker-compose python copyfile gitignore mercurial mvn sudo command-not-found colored-man-pages svn jhipster zsh-autosuggestions zsh-syntax-highlighting autoupdate)
 ```
 
 **zsh-autosuggestions**: https://github.com/zsh-users/zsh-autosuggestions
 
 **zsh-syntax-highlighting**: https://github.com/zsh-users/zsh-syntax-highlighting
+
+**JHipster**: https://github.com/jhipster/jhipster-oh-my-zsh-plugin
 
 ## Auto update themes and plugins
 **autoupdate**: https://github.com/TamCore/autoupdate-oh-my-zsh-plugins
